@@ -28,8 +28,13 @@ export interface Settings {
 export default (p: Settings) => {
     // On récupère le canvas pour dessiner
     const island = document.getElementById('island') as HTMLCanvasElement
+
+    
     const ctx = island.getContext('2d')
     if(!ctx) return
+    island.addEventListener('click', () => {
+        ctx.save()
+    })
     ctx.imageSmoothingEnabled = false
     
     // On fixe la taille du dessin (canvas)

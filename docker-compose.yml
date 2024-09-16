@@ -1,0 +1,12 @@
+services:
+  web:
+    build:
+      context: .
+    restart: always
+    ports:
+    - "5174:5173"
+    environment:
+      # TLS_KEY: "./keys/server-key.pem"
+      # TLS_CERT: "./keys/server-cert.pem"
+    volumes:
+      - ./.keys:/app/keys
